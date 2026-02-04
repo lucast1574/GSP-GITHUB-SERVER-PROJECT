@@ -7,14 +7,10 @@
 ---
 
 [![GitHub Codespaces](https://img.shields.io/badge/GitHub-Codespaces-brightgreen?style=for-the-badge&logo=github)](https://github.com/features/codespaces)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg?style=for-the-badge)](https://opensource.org/licenses/Apache-2.0)
 
 ✨ **Fast** | 🛠️ **Simple** | 💻 **Cloud-Native**
 
 ---
 
 </div>
-
-## 📌 Project Overview
-> [!NOTE]
-> This repository serves as a quick-reference guide for developers and engineers to deploy and manage server environments directly within the GitHub ecosystem.
