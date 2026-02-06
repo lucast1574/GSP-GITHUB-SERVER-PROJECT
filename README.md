@@ -16,7 +16,7 @@
 </div>
 
 ## 📖 Descripción
-Este proyecto permite desplegar servidores de Minecraft (Java Edition) en **GitHub Codespaces** utilizando **LinuxGSM**. Está optimizado para ejecutarse directamente como usuario `root` para evitar problemas de permisos y maximizar la velocidad de despliegue.
+Este proyecto permite desplegar servidores de Minecraft (Java Edition), Minecraft (Bedrock), Hytale y Terraria, Futuramente Ark y demas juegos en **GitHub Codespaces** utilizando **LinuxGSM**. Está optimizado para ejecutarse directamente como usuario `root` para evitar problemas de permisos y maximizar la velocidad de despliegue.
 
 ---
 # 🧊 MINECRAFT JAVA 
@@ -129,3 +129,20 @@ sed -i 's/eula=false/eula=true/g' /root/minecraft-server/serverfiles/eula.txt
 
 
 # 📦 Minecraft Bedrock
+
+## 🛠️ Guía de Instalación Paso a Paso
+
+### 1. Acceso Root
+```bash
+sudo su -
+```
+
+### 2. Dependencias del Sistema (Específicas para Bedrock)
+
+Bedrock requiere ```libcurl``` y ```openssl``` para validar cuentas de Microsoft/Xbox Live:
+
+```bash
+apt update && apt install -y curl wget file tar bzip2 gzip unzip bsdmainutils python3 util-linux ca-certificates binutils bc jq tmux netcat-openbsd lib32gcc-s1 lib32stdc++6 libcurl4-openssl-dev
+```
+
+
