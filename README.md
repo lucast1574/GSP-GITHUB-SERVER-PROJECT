@@ -54,3 +54,78 @@ apt install -y openjdk-17-jdk
 ```bash
 apt install -y openjdk-21-jdk
 ```
+
+### 4. Configurar Directorio
+
+```bash
+mkdir -p /root/minecraft-server && cd /root/minecraft-server
+```
+
+### 5. Descargar LinuxGSM
+
+```bash
+curl -Lo mcserver [https://linuxgsm.sh/mcserver](https://linuxgsm.sh/mcserver) && chmod +x mcserver
+```
+
+### 6. Instalacion Automatica 
+
+```bash
+./mcserver auto-install --allow-root
+```
+
+## Playit
+
+Para obtener una IP fija sin depender del proxy HTTP de GitHub:
+
+```bash
+curl -Lo playit [https://github.com/playitcloud/playit-agent/releases/latest/download/playit-linux-amd64](https://github.com/playitcloud/playit-agent/releases/latest/download/playit-linux-amd64) && chmod +x playit
+./playit
+```
+
+## 🎮 Comandos de Gestión
+
+### Iniciar
+
+```bash
+./mcserver start --allow-root
+```
+
+### Consola
+
+```bash
+./mcserver console
+```
+
+### Detener
+
+```bash
+./mcserver stop --allow-root
+```
+
+### Detalles
+
+```bash
+./mcserver details
+```
+
+## ⚙️ Configuración Extra
+
+Argumentos Jvm
+
+```bash
+# Configuración de Memoria y Flags Optimizado para Codespaces
+javaram="12288"
+executable="./server.jar"
+preexecutable="java -Xms4G -Xmx12G -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1HeapRegionSize=16M -XX:G1ReservePercent=20 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1 -Dusing.aikars.flags=[https://mcflags.emc.gs](https://mcflags.emc.gs) -Daikars.new.flags=true -jar ${executable} nogui"
+updateonstart="off"
+```
+
+Si necesitas aceptar el EULA rápidamente por comando:
+
+```bash
+sed -i 's/eula=false/eula=true/g' /root/minecraft-server/serverfiles/eula.txt
+```
+<div align="center"> Optimizado para despliegues rápidos en Codespaces. </div>
+
+
+# 📦 Minecraft Bedrock
