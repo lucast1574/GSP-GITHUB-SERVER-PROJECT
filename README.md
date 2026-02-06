@@ -145,4 +145,149 @@ Bedrock requiere ```libcurl``` y ```openssl``` para validar cuentas de Microsoft
 apt update && apt install -y curl wget file tar bzip2 gzip unzip bsdmainutils python3 util-linux ca-certificates binutils bc jq tmux netcat-openbsd lib32gcc-s1 lib32stdc++6 libcurl4-openssl-dev
 ```
 
+### 3. Configurar Directorio y LinuxGSM (besserver)
 
+```bash
+mkdir -p /root/bedrock-server && cd /root/bedrock-server
+curl -Lo besserver [https://linuxgsm.sh/besserver](https://linuxgsm.sh/besserver) && chmod +x besserver
+```
+
+### 4. Instalacion Automatica
+
+```bash
+./besserver auto-install --allow-root
+```
+
+### 5. IP Playit.gg
+
+IMPORTANTE: Minecraft Bedrock usa el protocolo UDP. El proxy nativo de GitHub Codespaces solo soporta HTTP/TCP. Es obligatorio usar Playit.gg para que los jugadores puedan entrar.
+
+```bash
+curl -Lo playit [https://github.com/playitcloud/playit-agent/releases/latest/download/playit-linux-amd64](https://github.com/playitcloud/playit-agent/releases/latest/download/playit-linux-amd64) && chmod +x playit
+./playit
+```
+
+## 🎮 Comandos de Gestión Directa
+
+### Iniciar
+
+```bash
+./besserver start --allow-root
+```
+
+### Consola
+
+```bash
+./besserver console
+```
+
+### Detener
+
+```bash
+./besserver stop --allow-root
+```
+
+### Detalles
+
+```bash
+./besserver details
+```
+
+# 💎 Hytale
+
+## 🛠️ Guía de Instalación Paso a Paso
+
+### 1. Acceso Root
+```bash
+sudo su -
+wget [https://raw.githubusercontent.com/johnoclockdk/Hytale-Server-Installer/main/Hytale-Server](https://raw.githubusercontent.com/johnoclockdk/Hytale-Server-Installer/main/Hytale-Server) && chmod +x Hytale-Server && ./Hytale-Server install
+```
+
+##🎮 Diccionario de Comandos (CLI)
+
+| Comando | Descripcion |
+|---------|-------------|
+| `./Hytale-Server install` | Install Hytale server |
+| `./Hytale-Server start` | Start the server |
+| `./Hytale-Server stop` | Stop the server |
+| `./Hytale-Server restart` | Restart the server |
+| `./Hytale-Server status` | Show server status & configuration |
+| `./Hytale-Server console` | Open server console |
+| `./Hytale-Server logs` | View live server logs |
+| `./Hytale-Server update` | Update to latest version |
+| `./Hytale-Server backup` | Create manual backup |
+| `./Hytale-Server restore` | Restore from backup |
+| `./Hytale-Server config` | Edit server configuration |
+| `./Hytale-Server rotate-logs` | Manage and rotate server logs |
+| `./Hytale-Server autobackup` | Toggle automatic backups |
+| `./Hytale-Server autorestart` | Toggle automatic restarts |
+| `./Hytale-Server self-update` | Update the installer script |
+| `./Hytale-Server check-update` | Check for installer updates |
+| `./Hytale-Server autoupdate` | Toggle automatic installer updates |
+| `./Hytale-Server mods list` | List available and installed mods |
+| `./Hytale-Server mods install <name\|number>` | Install a mod |
+| `./Hytale-Server mods uninstall <name\|number>` | Uninstall a mod |
+| `./Hytale-Server uninstall` | Remove completely |
+
+💡 Run `./Hytale-Server` without arguments to show all commands.
+
+## Playit
+
+Usamos playit para crear un tunel al servidor 
+
+```bash
+curl -Lo playit https://github.com/playitcloud/playit-agent/releases/latest/download/playit-linux-amd64 && chmod +x playit
+./playit
+```
+
+# 🌲 Terraria
+
+
+## 🛠️ Guía de Instalación Paso a Paso
+
+Sigue estos bloques de comandos en la terminal:
+
+### 1. Acceso Root y Dependencias
+
+```bash
+sudo su -
+apt update && apt install -y curl wget file tar bzip2 gzip unzip bsdmainutils python3 util-linux ca-certificates binutils bc jq tmux netcat-openbsd lib32gcc-s1 lib32stdc++6 steamcmd
+```
+
+### 2. Configurar Directorio y LinuxGSM
+
+```bash
+mkdir -p /root/terraria-server && cd /root/terraria-server
+curl -Lo linuxgsm.sh https://linuxgsm.sh && chmod +x linuxgsm.sh && bash linuxgsm.sh terrariaserver
+```
+
+### 3. Instalacion Automatica
+
+```bash
+./terrariaserver install --allow-root
+```
+
+## 🎮 Comandos de Gestión (CLI)
+
+Ejecuta estos comandos dentro de /root/terraria-server/:
+
+| Comando | Descripcion |
+|---------|-------------|
+| `./terrariaserver start` | Inicia el servidor |
+| `./terrariaserver stop` | Detiene el servidor|
+| `./terrariaserver restart` | Reinicia el servidor |
+| `./terrariaserver console` | Abre la consola en vivo (Salir: Ctrl+B luego D) |
+| `./terrariaserver update` | Busca y aplica actualizaciones de SteamCMD|
+| `./terrariaserver backup` | Crea un respaldo comprimido (tar bzip2) de todo el servidor |
+| `./terrariaserver details` | Muestra puertos, contraseñas y archivos de configuración |
+
+## ⚙️ Notas de Configuración
+
+- Steam Login: Si el servidor te pide login, puedes editarlo en: /root/terraria-server/lgsm/config-lgsm/terrariaserver/common.cfg.
+
+- Puertos: Terraria usa el puerto 7777. Recuerda usar Playit.gg para la conexión externa:
+
+```bash
+curl -Lo playit https://github.com/playitcloud/playit-agent/releases/latest/download/playit-linux-amd64 && chmod +x playit
+./playit
+```
