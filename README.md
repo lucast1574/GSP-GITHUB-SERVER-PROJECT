@@ -64,7 +64,7 @@ mkdir -p /root/minecraft-server && cd /root/minecraft-server
 ### 5. Descargar LinuxGSM
 
 ```bash
-curl -Lo mcserver [https://linuxgsm.sh/mcserver](https://linuxgsm.sh/mcserver) && chmod +x mcserver
+curl -Lo mcserver https://linuxgsm.sh/mcserver && chmod +x mcserver
 ```
 
 ### 6. Instalacion Automatica 
