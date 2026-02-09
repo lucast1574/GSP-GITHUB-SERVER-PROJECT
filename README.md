@@ -24,18 +24,13 @@ Este proyecto permite desplegar servidores de Minecraft (Java Edition), Minecraf
 
 Sigue estos comandos en orden dentro de la terminal de tu Codespace:
 
-### 1. Acceso Total (Root)
-Para evitar restricciones de permisos y trabajar de forma directa:
+
+### 1. Dependencias del Sistema
 ```bash
-sudo su -
+sudo apt update && sudo apt install -y curl wget file tar bzip2 gzip unzip bsdmainutils python3 util-linux ca-certificates binutils bc jq tmux netcat-openbsd lib32gcc-s1 lib32stdc++6 steamcmd
 ```
 
-### 2. Dependencias del Sistema
-```bash
-apt update && apt install -y curl wget file tar bzip2 gzip unzip bsdmainutils python3 util-linux ca-certificates binutils bc jq tmux netcat-openbsd lib32gcc-s1 lib32stdc++6 steamcmd
-```
-
-### 3. Instalaicion de Java
+### 2. Instalaicion de Java
 ```bash
 sudo apt update
 sudo apt install -y software-properties-common
@@ -69,13 +64,13 @@ sudo apt install -y openjdk-21-jdk
 sudo update-alternatives --config java
 ```
 
-### 4. Configurar Directorio
+### 3. Configurar Directorio
 
 ```bash
 mkdir -p ./minecraft-server && cd ./minecraft-server
 ```
 
-### 5. Descargar LinuxGSM
+### 4. Descargar LinuxGSM
 
 ```bash
 curl -Lo linuxgsm.sh https://raw.githubusercontent.com/GameServerManagers/LinuxGSM/master/linuxgsm.sh
@@ -89,10 +84,10 @@ chmod +x linuxgsm.sh
 bash linuxgsm.sh mcserver
 ```
 
-### 6. Instalacion Automatica 
+### 5. Instalacion Automatica 
 
 ```bash
-./mcserver auto-install --allow-root
+./mcserver auto-install 
 ```
 
 ## Playit
@@ -100,8 +95,16 @@ bash linuxgsm.sh mcserver
 Para obtener una IP fija sin depender del proxy HTTP de GitHub:
 
 ```bash
-curl -Lo playit [https://github.com/playitcloud/playit-agent/releases/latest/download/playit-linux-amd64](https://github.com/playitcloud/playit-agent/releases/latest/download/playit-linux-amd64) && chmod +x playit
-./playit
+curl -SsL https://playit-cloud.github.io/ppa/key.gpg | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/playit.gpg
+```
+
+```bash
+echo "deb [signed-by=/etc/apt/trusted.gpg.d/playit.gpg] https://playit-cloud.github.io/ppa/data ./" | sudo tee /etc/apt/sources.list.d/playit-cloud.list
+```
+
+```bash
+sudo apt update
+sudo apt install playit -y
 ```
 
 ## 🎮 Comandos de Gestión
@@ -109,7 +112,7 @@ curl -Lo playit [https://github.com/playitcloud/playit-agent/releases/latest/dow
 ### Iniciar
 
 ```bash
-./mcserver start --allow-root
+./mcserver start 
 ```
 
 ### Consola
@@ -121,7 +124,7 @@ curl -Lo playit [https://github.com/playitcloud/playit-agent/releases/latest/dow
 ### Detener
 
 ```bash
-./mcserver stop --allow-root
+./mcserver stop 
 ```
 
 ### Detalles
@@ -154,20 +157,15 @@ sed -i 's/eula=false/eula=true/g' /root/minecraft-server/serverfiles/eula.txt
 
 ## 🛠️ Guía de Instalación Paso a Paso
 
-### 1. Acceso Root
-```bash
-sudo su -
-```
-
-### 2. Dependencias del Sistema (Específicas para Bedrock)
+### 1. Dependencias del Sistema (Específicas para Bedrock)
 
 Bedrock requiere ```libcurl``` y ```openssl``` para validar cuentas de Microsoft/Xbox Live:
 
 ```bash
-apt update && apt install -y curl wget file tar bzip2 gzip unzip bsdmainutils python3 util-linux ca-certificates binutils bc jq tmux netcat-openbsd lib32gcc-s1 lib32stdc++6 libcurl4-openssl-dev
+sudo apt update && sudo apt install -y curl wget file tar bzip2 gzip unzip bsdmainutils python3 util-linux ca-certificates binutils bc jq tmux netcat-openbsd lib32gcc-s1 lib32stdc++6 libcurl4-openssl-dev
 ```
 
-### 3. Configurar Directorio y LinuxGSM (besserver)
+### 2. Configurar Directorio y LinuxGSM (besserver)
 
 ```bash
 mkdir -p ./bedrock-server && cd ./bedrock-server
@@ -179,19 +177,27 @@ chmod +x linuxgsm.sh
 bash linuxgsm.sh besserver
 ```
 
-### 4. Instalacion Automatica
+### 3. Instalacion Automatica
 
 ```bash
-./besserver auto-install --allow-root
+./besserver auto-install 
 ```
 
-### 5. IP Playit.gg
+### 4. IP Playit.gg
 
 IMPORTANTE: Minecraft Bedrock usa el protocolo UDP. El proxy nativo de GitHub Codespaces solo soporta HTTP/TCP. Es obligatorio usar Playit.gg para que los jugadores puedan entrar.
 
 ```bash
-curl -Lo playit [https://github.com/playitcloud/playit-agent/releases/latest/download/playit-linux-amd64](https://github.com/playitcloud/playit-agent/releases/latest/download/playit-linux-amd64) && chmod +x playit
-./playit
+curl -SsL https://playit-cloud.github.io/ppa/key.gpg | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/playit.gpg
+```
+
+```bash
+echo "deb [signed-by=/etc/apt/trusted.gpg.d/playit.gpg] https://playit-cloud.github.io/ppa/data ./" | sudo tee /etc/apt/sources.list.d/playit-cloud.list
+```
+
+```bash
+sudo apt update
+sudo apt install playit -y
 ```
 
 ## 🎮 Comandos de Gestión Directa
@@ -199,7 +205,7 @@ curl -Lo playit [https://github.com/playitcloud/playit-agent/releases/latest/dow
 ### Iniciar
 
 ```bash
-./besserver start --allow-root
+./besserver start
 ```
 
 ### Consola
@@ -211,7 +217,7 @@ curl -Lo playit [https://github.com/playitcloud/playit-agent/releases/latest/dow
 ### Detener
 
 ```bash
-./besserver stop --allow-root
+./besserver stop
 ```
 
 ### Detalles
@@ -226,7 +232,6 @@ curl -Lo playit [https://github.com/playitcloud/playit-agent/releases/latest/dow
 
 ### 1. Acceso Root
 ```bash
-sudo su -
 wget [https://raw.githubusercontent.com/johnoclockdk/Hytale-Server-Installer/main/Hytale-Server](https://raw.githubusercontent.com/johnoclockdk/Hytale-Server-Installer/main/Hytale-Server) && chmod +x Hytale-Server && ./Hytale-Server install
 ```
 
@@ -263,8 +268,16 @@ wget [https://raw.githubusercontent.com/johnoclockdk/Hytale-Server-Installer/mai
 Usamos playit para crear un tunel al servidor 
 
 ```bash
-curl -Lo playit https://github.com/playitcloud/playit-agent/releases/latest/download/playit-linux-amd64 && chmod +x playit
-./playit
+curl -SsL https://playit-cloud.github.io/ppa/key.gpg | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/playit.gpg
+```
+
+```bash
+echo "deb [signed-by=/etc/apt/trusted.gpg.d/playit.gpg] https://playit-cloud.github.io/ppa/data ./" | sudo tee /etc/apt/sources.list.d/playit-cloud.list
+```
+
+```bash
+sudo apt update
+sudo apt install playit -y
 ```
 
 # 🌲 Terraria
@@ -277,8 +290,7 @@ Sigue estos bloques de comandos en la terminal:
 ### 1. Acceso Root y Dependencias
 
 ```bash
-sudo su -
-apt update && apt install -y curl wget file tar bzip2 gzip unzip bsdmainutils python3 util-linux ca-certificates binutils bc jq tmux netcat-openbsd lib32gcc-s1 lib32stdc++6 steamcmd
+sudo apt update && sudo apt install -y curl wget file tar bzip2 gzip unzip bsdmainutils python3 util-linux ca-certificates binutils bc jq tmux netcat-openbsd lib32gcc-s1 lib32stdc++6 steamcmd
 ```
 
 ### 2. Configurar Directorio y LinuxGSM
@@ -296,7 +308,7 @@ bash linuxgsm.sh terrariaserver
 ### 3. Instalacion Automatica
 
 ```bash
-./terrariaserver install --allow-root
+./terrariaserver install
 ```
 
 ## 🎮 Comandos de Gestión (CLI)
@@ -320,6 +332,14 @@ Ejecuta estos comandos dentro de /root/terraria-server/:
 - Puertos: Terraria usa el puerto 7777. Recuerda usar Playit.gg para la conexión externa:
 
 ```bash
-curl -Lo playit https://github.com/playitcloud/playit-agent/releases/latest/download/playit-linux-amd64 && chmod +x playit
-./playit
+curl -SsL https://playit-cloud.github.io/ppa/key.gpg | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/playit.gpg
+```
+
+```bash
+echo "deb [signed-by=/etc/apt/trusted.gpg.d/playit.gpg] https://playit-cloud.github.io/ppa/data ./" | sudo tee /etc/apt/sources.list.d/playit-cloud.list
+```
+
+```bash
+sudo apt update
+sudo apt install playit -y
 ```
