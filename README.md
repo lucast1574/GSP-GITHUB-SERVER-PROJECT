@@ -107,6 +107,12 @@ sudo apt update
 sudo apt install playit -y
 ```
 
+# Ejecutar
+
+```bash
+playit
+```
+
 ## 🎮 Comandos de Gestión
 
 ### Iniciar
@@ -200,6 +206,12 @@ sudo apt update
 sudo apt install playit -y
 ```
 
+# Ejecutar
+
+```bash
+playit
+```
+
 ## 🎮 Comandos de Gestión Directa
 
 ### Iniciar
@@ -280,6 +292,14 @@ sudo apt update
 sudo apt install playit -y
 ```
 
+
+# Ejecutar
+
+```bash
+playit
+```
+
+
 # 🌲 Terraria
 
 
@@ -342,4 +362,10 @@ echo "deb [signed-by=/etc/apt/trusted.gpg.d/playit.gpg] https://playit-cloud.git
 ```bash
 sudo apt update
 sudo apt install playit -y
+```
+
+# Ejecutar
+
+```bash
+playit
 ```
