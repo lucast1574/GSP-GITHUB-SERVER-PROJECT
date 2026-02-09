@@ -36,35 +36,57 @@ apt update && apt install -y curl wget file tar bzip2 gzip unzip bsdmainutils py
 ```
 
 ### 3. Instalaicion de Java
-
+```bash
+sudo apt update
+sudo apt install -y software-properties-common
+```
+```bash
+sudo add-apt-repository -y ppa:openjdk-r/ppa
+sudo apt update
+```
 - Java 8 version antiguas < 1.16.5
 
 ```bash
-apt install -y openjdk-8-jdk
+sudo apt install -y openjdk-8-jdk
 ```
 
 - Java 17 para versiones 1.17 a 1.20.4
 
 ```bash
-apt install -y openjdk-17-jdk
+sudo apt install -y openjdk-17-jdk
 ```
 
 - Java 17 para versiones 1.20.5 y superiores
 
 ```bash
-apt install -y openjdk-21-jdk
+sudo apt install -y openjdk-21-jdk
+```
+
+
+-Elige tu version de Java(Recomendado si instalas todas)
+
+```bash
+sudo update-alternatives --config java
 ```
 
 ### 4. Configurar Directorio
 
 ```bash
-mkdir -p /root/minecraft-server && cd /root/minecraft-server
+mkdir -p ./minecraft-server && cd ./minecraft-server
 ```
 
 ### 5. Descargar LinuxGSM
 
 ```bash
-curl -Lo mcserver https://linuxgsm.sh/mcserver && chmod +x mcserver
+curl -Lo linuxgsm.sh https://raw.githubusercontent.com/GameServerManagers/LinuxGSM/master/linuxgsm.sh
+```
+
+```bash
+chmod +x linuxgsm.sh
+```
+
+```bash
+bash linuxgsm.sh mcserver
 ```
 
 ### 6. Instalacion Automatica 
@@ -148,8 +170,13 @@ apt update && apt install -y curl wget file tar bzip2 gzip unzip bsdmainutils py
 ### 3. Configurar Directorio y LinuxGSM (besserver)
 
 ```bash
-mkdir -p /root/bedrock-server && cd /root/bedrock-server
-curl -Lo besserver [https://linuxgsm.sh/besserver](https://linuxgsm.sh/besserver) && chmod +x besserver
+mkdir -p ./bedrock-server && cd ./bedrock-server
+```
+
+```bash
+curl -Lo linuxgsm.sh https://raw.githubusercontent.com/GameServerManagers/LinuxGSM/master/linuxgsm.sh
+chmod +x linuxgsm.sh
+bash linuxgsm.sh besserver
 ```
 
 ### 4. Instalacion Automatica
@@ -257,8 +284,13 @@ apt update && apt install -y curl wget file tar bzip2 gzip unzip bsdmainutils py
 ### 2. Configurar Directorio y LinuxGSM
 
 ```bash
-mkdir -p /root/terraria-server && cd /root/terraria-server
-curl -Lo linuxgsm.sh https://linuxgsm.sh && chmod +x linuxgsm.sh && bash linuxgsm.sh terrariaserver
+mkdir -p ./terraria-server && cd ./terraria-server
+```
+
+```bash
+curl -Lo linuxgsm.sh https://raw.githubusercontent.com/GameServerManagers/LinuxGSM/master/linuxgsm.sh
+chmod +x linuxgsm.sh
+bash linuxgsm.sh terrariaserver
 ```
 
 ### 3. Instalacion Automatica
