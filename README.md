@@ -117,17 +117,6 @@ playit
 setsid /opt/playit/agent > playit.log 2>&1 &
 ```
 
-### Ejecuta esto para que siempre se ejecute playit en el codespace
-```bash
-mkdir -p .devcontainer
-
-cat << 'EOF' > .devcontainer/devcontainer.json
-{
-    "name": "Playit Auto-Start",
-    "postStartCommand": "setsid /opt/playit/agent > /workspaces/GSP-GITHUB-SERVER-PROJECT/playit.log 2>&1 &"
-}
-EOF
-```
 ## 🎮 Comandos de Gestión
 
 ### Iniciar
@@ -233,17 +222,6 @@ playit
 setsid /opt/playit/agent > playit.log 2>&1 &
 ```
 
-### Ejecuta esto para que siempre se ejecute playit en el codespace
-```bash
-mkdir -p .devcontainer
-
-cat << 'EOF' > .devcontainer/devcontainer.json
-{
-    "name": "Playit Auto-Start",
-    "postStartCommand": "setsid /opt/playit/agent > /workspaces/GSP-GITHUB-SERVER-PROJECT/playit.log 2>&1 &"
-}
-EOF
-```
 
 ## 🎮 Comandos de Gestión Directa
 
@@ -337,18 +315,6 @@ playit
 setsid /opt/playit/agent > playit.log 2>&1 &
 ```
 
-### Ejecuta esto para que siempre se ejecute playit en el codespace
-```bash
-mkdir -p .devcontainer
-
-cat << 'EOF' > .devcontainer/devcontainer.json
-{
-    "name": "Playit Auto-Start",
-    "postStartCommand": "setsid /opt/playit/agent > /workspaces/GSP-GITHUB-SERVER-PROJECT/playit.log 2>&1 &"
-}
-EOF
-```
-
 
 # 🌲 Terraria
 
@@ -426,14 +392,3 @@ playit
 setsid /opt/playit/agent > playit.log 2>&1 &
 ```
 
-### Ejecuta esto para que siempre se ejecute playit en el codespace
-```bash
-mkdir -p .devcontainer
-
-cat << 'EOF' > .devcontainer/devcontainer.json
-{
-    "name": "Playit Auto-Start",
-    "postStartCommand": "setsid /opt/playit/agent > /workspaces/GSP-GITHUB-SERVER-PROJECT/playit.log 2>&1 &"
-}
-EOF
-```
