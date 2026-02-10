@@ -284,27 +284,27 @@ wget [https://raw.githubusercontent.com/johnoclockdk/Hytale-Server-Installer/mai
 
 | Comando | Descripcion |
 |---------|-------------|
-| `./Hytale-Server install` | Install Hytale server |
-| `./Hytale-Server start` | Start the server |
-| `./Hytale-Server stop` | Stop the server |
-| `./Hytale-Server restart` | Restart the server |
-| `./Hytale-Server status` | Show server status & configuration |
-| `./Hytale-Server console` | Open server console |
-| `./Hytale-Server logs` | View live server logs |
-| `./Hytale-Server update` | Update to latest version |
-| `./Hytale-Server backup` | Create manual backup |
-| `./Hytale-Server restore` | Restore from backup |
-| `./Hytale-Server config` | Edit server configuration |
-| `./Hytale-Server rotate-logs` | Manage and rotate server logs |
-| `./Hytale-Server autobackup` | Toggle automatic backups |
-| `./Hytale-Server autorestart` | Toggle automatic restarts |
-| `./Hytale-Server self-update` | Update the installer script |
-| `./Hytale-Server check-update` | Check for installer updates |
-| `./Hytale-Server autoupdate` | Toggle automatic installer updates |
-| `./Hytale-Server mods list` | List available and installed mods |
-| `./Hytale-Server mods install <name\|number>` | Install a mod |
-| `./Hytale-Server mods uninstall <name\|number>` | Uninstall a mod |
-| `./Hytale-Server uninstall` | Remove completely |
+| `./Hytale-Server install` | Instalar el servidor |
+| `./Hytale-Server start` | Iniciar el servidor |
+| `./Hytale-Server stop` | Detener el servidor |
+| `./Hytale-Server restart` | Reiniciar el servidor|
+| `./Hytale-Server status` | Mostrar el estado del servidor |
+| `./Hytale-Server console` | Abre la consola del servidor |
+| `./Hytale-Server logs` | Mira el log del servidor en vivo |
+| `./Hytale-Server update` | Actualiza a la utlima version |
+| `./Hytale-Server backup` | Crea un backup Manual |
+| `./Hytale-Server restore` | Reinicia desde el backup |
+| `./Hytale-Server config` | Edita la configuracion del Servidor |
+| `./Hytale-Server rotate-logs` | Maneja las los log rotativos |
+| `./Hytale-Server autobackup` | Activa backups automaticos|
+| `./Hytale-Server autorestart` | Reinicio automatico |
+| `./Hytale-Server self-update` | Actualiza el instalador|
+| `./Hytale-Server check-update` | Busca actualizaciones del instalador |
+| `./Hytale-Server autoupdate` | Activa las actualizaciones automaticas del instalador |
+| `./Hytale-Server mods list` | Lista los mods instalados |
+| `./Hytale-Server mods install <name\|number>` | Instala un mod|
+| `./Hytale-Server mods uninstall <name\|number>` | Desintala un mod |
+| `./Hytale-Server uninstall` | Desintalacion completa|
 
 💡 Run `./Hytale-Server` without arguments to show all commands.
 
