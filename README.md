@@ -208,6 +208,8 @@ bash linuxgsm.sh besserver
 
 IMPORTANTE: Minecraft Bedrock usa el protocolo UDP. El proxy nativo de GitHub Codespaces solo soporta HTTP/TCP. Es obligatorio usar Playit.gg para que los jugadores puedan entrar.
 
+Para obtener una IP fija sin depender del proxy HTTP de GitHub:
+
 ```bash
 curl -SsL https://playit-cloud.github.io/ppa/key.gpg | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/playit.gpg
 ```
@@ -225,6 +227,22 @@ sudo apt install playit -y
 
 ```bash
 playit
+```
+### Para que el agente no cierre
+```bash
+setsid /opt/playit/agent > playit.log 2>&1 &
+```
+
+### Ejecuta esto para que siempre se ejecute playit en el codespace
+```bash
+mkdir -p .devcontainer
+
+cat << 'EOF' > .devcontainer/devcontainer.json
+{
+    "name": "Playit Auto-Start",
+    "postStartCommand": "setsid /opt/playit/agent > /workspaces/GSP-GITHUB-SERVER-PROJECT/playit.log 2>&1 &"
+}
+EOF
 ```
 
 ## 🎮 Comandos de Gestión Directa
@@ -294,6 +312,8 @@ wget [https://raw.githubusercontent.com/johnoclockdk/Hytale-Server-Installer/mai
 
 Usamos playit para crear un tunel al servidor 
 
+Para obtener una IP fija sin depender del proxy HTTP de GitHub:
+
 ```bash
 curl -SsL https://playit-cloud.github.io/ppa/key.gpg | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/playit.gpg
 ```
@@ -307,11 +327,26 @@ sudo apt update
 sudo apt install playit -y
 ```
 
-
 # Ejecutar
 
 ```bash
 playit
+```
+### Para que el agente no cierre
+```bash
+setsid /opt/playit/agent > playit.log 2>&1 &
+```
+
+### Ejecuta esto para que siempre se ejecute playit en el codespace
+```bash
+mkdir -p .devcontainer
+
+cat << 'EOF' > .devcontainer/devcontainer.json
+{
+    "name": "Playit Auto-Start",
+    "postStartCommand": "setsid /opt/playit/agent > /workspaces/GSP-GITHUB-SERVER-PROJECT/playit.log 2>&1 &"
+}
+EOF
 ```
 
 
@@ -366,6 +401,8 @@ Ejecuta estos comandos dentro de /root/terraria-server/:
 
 - Puertos: Terraria usa el puerto 7777. Recuerda usar Playit.gg para la conexión externa:
 
+Para obtener una IP fija sin depender del proxy HTTP de GitHub:
+
 ```bash
 curl -SsL https://playit-cloud.github.io/ppa/key.gpg | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/playit.gpg
 ```
@@ -383,4 +420,20 @@ sudo apt install playit -y
 
 ```bash
 playit
+```
+### Para que el agente no cierre
+```bash
+setsid /opt/playit/agent > playit.log 2>&1 &
+```
+
+### Ejecuta esto para que siempre se ejecute playit en el codespace
+```bash
+mkdir -p .devcontainer
+
+cat << 'EOF' > .devcontainer/devcontainer.json
+{
+    "name": "Playit Auto-Start",
+    "postStartCommand": "setsid /opt/playit/agent > /workspaces/GSP-GITHUB-SERVER-PROJECT/playit.log 2>&1 &"
+}
+EOF
 ```
