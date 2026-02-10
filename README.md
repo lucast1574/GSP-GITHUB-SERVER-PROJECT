@@ -44,19 +44,53 @@ sudo apt update
 ```bash
 sudo apt install -y openjdk-8-jdk
 ```
+```bash
+cat << 'EOF' >> ~/.bashrc
 
+# Force Java 21 for GSP-SERVER
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+export PATH=$JAVA_HOME/bin:$PATH
+EOF
+```
+
+```bash
+source ~/.bashrc
+```
 - Java 17 para versiones 1.17 a 1.20.4
 
 ```bash
 sudo apt install -y openjdk-17-jdk
 ```
+```bash
+cat << 'EOF' >> ~/.bashrc
 
-- Java 17 para versiones 1.20.5 y superiores
+# Force Java 21 for GSP-SERVER
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+export PATH=$JAVA_HOME/bin:$PATH
+EOF
+```
+
+```bash
+source ~/.bashrc
+```
+- Java 21 para versiones 1.20.5 y superiores
 
 ```bash
 sudo apt install -y openjdk-21-jdk
 ```
 
+```bash
+cat << 'EOF' >> ~/.bashrc
+
+# Force Java 21 for GSP-SERVER
+export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
+export PATH=$JAVA_HOME/bin:$PATH
+EOF
+```
+
+```bash
+source ~/.bashrc
+```
 
 -Elige tu version de Java(Recomendado si instalas todas)
 
@@ -84,6 +118,11 @@ chmod +x linuxgsm.sh
 bash linuxgsm.sh mcserver
 ```
 
+### 5. Instalacion Automatica 
+
+```bash
+./mcserver auto-install 
+```
 
 ## 🎮 Comandos de Gestión
 
@@ -109,12 +148,6 @@ bash linuxgsm.sh mcserver
 
 ```bash
 ./mcserver details
-```
-
-### 5. Instalacion Automatica 
-
-```bash
-./mcserver auto-install 
 ```
 
 ## Playit
@@ -158,6 +191,27 @@ Si necesitas aceptar el EULA rápidamente por comando:
 ```bash
 sed -i 's/eula=false/eula=true/g' /root/minecraft-server/serverfiles/eula.txt
 ```
+
+## Otra versiones
+
+- Regresar al paso antes de instalar
+
+```bash
+./mcserver auto-install 
+```
+
+-Instalar y cambiar el archivo minecraft_server.jar
+
+```bash
+chmod +x /workspaces/GSP-GITHUB-SERVER-PROJECT/minecraft-server/serverfiles/minecraft_server.jar
+```
+
+Verifica que tu version de Arclight, Mohist, Paper Purpur o Otros sea estable antes ingresarla al servidor
+
+```bash
+./mcserver start 
+```
+
 <div align="center"> Optimizado para despliegues rápidos en Codespaces. </div>
 
 
