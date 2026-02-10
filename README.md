@@ -84,6 +84,33 @@ chmod +x linuxgsm.sh
 bash linuxgsm.sh mcserver
 ```
 
+
+## 🎮 Comandos de Gestión
+
+### Iniciar
+
+```bash
+./mcserver start 
+```
+
+### Consola
+
+```bash
+./mcserver console
+```
+
+### Detener
+
+```bash
+./mcserver stop 
+```
+
+### Detalles
+
+```bash
+./mcserver details
+```
+
 ### 5. Instalacion Automatica 
 
 ```bash
@@ -117,32 +144,6 @@ playit
 setsid /opt/playit/agent > playit.log 2>&1 &
 ```
 
-## 🎮 Comandos de Gestión
-
-### Iniciar
-
-```bash
-./mcserver start 
-```
-
-### Consola
-
-```bash
-./mcserver console
-```
-
-### Detener
-
-```bash
-./mcserver stop 
-```
-
-### Detalles
-
-```bash
-./mcserver details
-```
-
 ## ⚙️ Configuración Extra
 
 Argumentos Jvm
@@ -150,9 +151,6 @@ Argumentos Jvm
 ```bash
 # Configuración de Memoria y Flags Optimizado para Codespaces
 javaram="12288"
-executable="./server.jar"
-preexecutable="java -Xms4G -Xmx12G -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1HeapRegionSize=16M -XX:G1ReservePercent=20 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1 -Dusing.aikars.flags=[https://mcflags.emc.gs](https://mcflags.emc.gs) -Daikars.new.flags=true -jar ${executable} nogui"
-updateonstart="off"
 ```
 
 Si necesitas aceptar el EULA rápidamente por comando:
