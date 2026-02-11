@@ -236,13 +236,13 @@ mkdir -p ./bedrock-server && cd ./bedrock-server
 ```bash
 curl -Lo linuxgsm.sh https://raw.githubusercontent.com/GameServerManagers/LinuxGSM/master/linuxgsm.sh
 chmod +x linuxgsm.sh
-bash linuxgsm.sh besserver
+bash linuxgsm.sh mcbserver
 ```
 
 ### 3. Instalacion Automatica
 
 ```bash
-./besserver auto-install 
+./mcbserver auto-install 
 ```
 
 ### 4. IP Playit.gg
@@ -280,25 +280,25 @@ setsid /opt/playit/agent > playit.log 2>&1 &
 ### Iniciar
 
 ```bash
-./besserver start
+./mcbserver start
 ```
 
 ### Consola
 
 ```bash
-./besserver console
+./mcbserver console
 ```
 
 ### Detener
 
 ```bash
-./besserver stop
+./mcbserver stop
 ```
 
 ### Detalles
 
 ```bash
-./besserver details
+./mcbserver details
 ```
 
 # 💎 Hytale
