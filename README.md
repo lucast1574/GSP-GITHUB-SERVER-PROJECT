@@ -321,7 +321,7 @@ wget "https://raw.githubusercontent.com/johnoclockdk/Hytale-Server-Installer/mai
 | Comando | Descripcion |
 |---------|-------------|
 | `./Hytale-Server install` | Instalar el servidor |
-| `./Hytale-Server start` | Iniciar el servidor |
+| `./Hytale-Server start --skip-auth` | Iniciar el servidor |
 | `./Hytale-Server stop` | Detener el servidor |
 | `./Hytale-Server restart` | Reiniciar el servidor|
 | `./Hytale-Server status` | Mostrar el estado del servidor |
