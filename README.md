@@ -304,6 +304,11 @@ setsid /opt/playit/agent > playit.log 2>&1 &
 ## 🛠️ Guía de Instalación Paso a Paso
 
 ### 1. Acceso Root
+
+### Preinstalacion
+```bash
+sudo apt-get update && sudo apt-get install -y tmux cron
+```
 ```bash
 wget "https://raw.githubusercontent.com/johnoclockdk/Hytale-Server-Installer/main/Hytale-Server" && chmod +x Hytale-Server && ./Hytale-Server install
 ```
