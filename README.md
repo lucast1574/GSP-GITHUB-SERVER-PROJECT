@@ -307,7 +307,10 @@ setsid /opt/playit/agent > playit.log 2>&1 &
 
 ### Preinstalacion
 ```bash
-sudo apt update && sudo apt install -y tmux cron wget curl unzip screen ca-certificates openjdk-25-jdk-headless
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo gpg --dearmor -o /usr/share/keyrings/yarn-archive-keyring.gpg && echo "deb [signed-by=/usr/share/keyrings/yarn-archive-keyring.gpg] https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list > /dev/null
+```
+```bash
+sudo apt clean && sudo apt update && sudo apt install -y tmux cron wget curl unzip screen ca-certificates openjdk-25-jdk-headless
 ```
 ```bash
 wget "https://raw.githubusercontent.com/johnoclockdk/Hytale-Server-Installer/main/Hytale-Server" && chmod +x Hytale-Server && sudo ./Hytale-Server install
