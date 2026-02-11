@@ -245,6 +245,31 @@ bash linuxgsm.sh mcbserver
 ./mcbserver auto-install 
 ```
 
+## 🎮 Comandos de Gestión Directa
+
+### Iniciar
+
+```bash
+./mcbserver start
+```
+
+### Consola
+
+```bash
+./mcbserver console
+```
+
+### Detener
+
+```bash
+./mcbserver stop
+```
+
+### Detalles
+
+```bash
+./mcbserver details
+```
 ### 4. IP Playit.gg
 
 IMPORTANTE: Minecraft Bedrock usa el protocolo UDP. El proxy nativo de GitHub Codespaces solo soporta HTTP/TCP. Es obligatorio usar Playit.gg para que los jugadores puedan entrar.
@@ -274,40 +299,13 @@ playit
 setsid /opt/playit/agent > playit.log 2>&1 &
 ```
 
-
-## 🎮 Comandos de Gestión Directa
-
-### Iniciar
-
-```bash
-./mcbserver start
-```
-
-### Consola
-
-```bash
-./mcbserver console
-```
-
-### Detener
-
-```bash
-./mcbserver stop
-```
-
-### Detalles
-
-```bash
-./mcbserver details
-```
-
 # 💎 Hytale
 
 ## 🛠️ Guía de Instalación Paso a Paso
 
 ### 1. Acceso Root
 ```bash
-wget [https://raw.githubusercontent.com/johnoclockdk/Hytale-Server-Installer/main/Hytale-Server](https://raw.githubusercontent.com/johnoclockdk/Hytale-Server-Installer/main/Hytale-Server) && chmod +x Hytale-Server && ./Hytale-Server install
+wget "https://raw.githubusercontent.com/johnoclockdk/Hytale-Server-Installer/main/Hytale-Server" && chmod +x Hytale-Server && ./Hytale-Server install
 ```
 
 ##🎮 Diccionario de Comandos (CLI)
