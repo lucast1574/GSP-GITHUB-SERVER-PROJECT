@@ -387,11 +387,24 @@ Sigue estos bloques de comandos en la terminal:
 sudo apt update && sudo apt install -y curl wget file tar bzip2 gzip unzip bsdmainutils python3 util-linux ca-certificates binutils bc jq tmux netcat-openbsd lib32gcc-s1 lib32stdc++6 steamcmd
 ```
 
+
 ### 2. Configurar Directorio y LinuxGSM
 
 ```bash
 mkdir -p ./terraria-server && cd ./terraria-server
 ```
+```bash
+cd /workspaces/GSP-GITHUB-SERVER-PROJECT/terraria-server
+mkdir -p steamcmd
+cd steamcmd
+curl -sqL "https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz" | tar zxvf -
+```
+```bash
+./steamcmd.sh
+```
+
+logeate y activa el steam guard code
+
 
 ```bash
 wget -O linuxgsm.sh https://linuxgsm.sh && chmod +x linuxgsm.sh && bash linuxgsm.sh terrariaserver
@@ -420,10 +433,11 @@ Ejecuta estos comandos dentro de /root/terraria-server/:
 ## ⚙️ Notas de Configuración
 
 - Steam Login: Si el servidor te pide login, puedes editarlo en: /root/terraria-server/lgsm/config-lgsm/terrariaserver/common.cfg.
-
--steamuser="anonymous"
+```bash
+steamuser="anonymous"
 steampass=""
-
+ip=""
+```
 - Puertos: Terraria usa el puerto 7777. Recuerda usar Playit.gg para la conexión externa:
 
 Para obtener una IP fija sin depender del proxy HTTP de GitHub:
