@@ -394,9 +394,7 @@ mkdir -p ./terraria-server && cd ./terraria-server
 ```
 
 ```bash
-curl -Lo linuxgsm.sh https://raw.githubusercontent.com/GameServerManagers/LinuxGSM/master/linuxgsm.sh
-chmod +x linuxgsm.sh
-bash linuxgsm.sh terrariaserver
+wget -O linuxgsm.sh https://linuxgsm.sh && chmod +x linuxgsm.sh && bash linuxgsm.sh terrariaserver
 ```
 
 ### 3. Instalacion Automatica
