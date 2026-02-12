@@ -423,6 +423,9 @@ Ejecuta estos comandos dentro de /root/terraria-server/:
 
 - Steam Login: Si el servidor te pide login, puedes editarlo en: /root/terraria-server/lgsm/config-lgsm/terrariaserver/common.cfg.
 
+-steamuser="anonymous"
+steampass=""
+
 - Puertos: Terraria usa el puerto 7777. Recuerda usar Playit.gg para la conexión externa:
 
 Para obtener una IP fija sin depender del proxy HTTP de GitHub:
