@@ -415,7 +415,9 @@ wget -O linuxgsm.sh https://linuxgsm.sh && chmod +x linuxgsm.sh && bash linuxgsm
 ```bash
 ./terrariaserver install
 ```
-
+```bash
+curl ifconfig.me
+```
 ## 🎮 Comandos de Gestión (CLI)
 
 Ejecuta estos comandos dentro de /root/terraria-server/:
