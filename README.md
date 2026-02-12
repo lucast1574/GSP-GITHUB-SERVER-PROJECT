@@ -440,6 +440,8 @@ steamuser="anonymous"
 steampass=""
 ip=""
 ```
+
+-recomendacion que la cuenta con la que jueges no sea la del servidor
 - Puertos: Terraria usa el puerto 7777. Recuerda usar Playit.gg para la conexión externa:
 
 Para obtener una IP fija sin depender del proxy HTTP de GitHub:
